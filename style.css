@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fafafa;
+}
+
+header {
+    background: #ff914d;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px;
+}
+
+.login-box {
+    width: 300px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box input {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background: #ff914d;
+    color: white;
+    border: none;
+}
