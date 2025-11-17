@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Donasi</title>
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header class="topbar"><div class="container"><h1 class="brand">PawHouse</h1><nav class="nav"><a href="index.html">Home</a><a href="adopt.html">Adopsi</a><a href="volunteer.html">Volunteer</a><a href="login.html" id="nav-login4">Login</a></nav></div></header>
+<main class="container">
+  <h2>Donasi</h2>
+  <form id="donate-form">
+    <label>Nama Donatur<input id="donor-name" required></label>
+    <label>Nominal (Rupiah)<input id="donor-amount" type="number" required></label>
+    <label>Bukti Pembayaran (URL atau teks)<input id="donor-proof"></label>
+    <button class="btn" type="submit">Kirim Donasi</button>
+    <p id="don-msg" class="msg"></p>
+  </form>
+</main>
+<script src="js/app.js"></script>
+<script>
+  document.getElementById('donate-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('donor-name').value.trim();
+    const amount = parseFloat(document.getElementById('donor-amount').value) || 0;
+    const proof = document.getElementById('donor-proof').value.trim();
+    const res = submitDonation(name, amount, proof);
+    document.getElementById('don-msg').textContent = res.message;
+    if(res.success) setTimeout(()=>{ window.location.href='index.html'; },800);
+  });
+</script>
+</body></html>

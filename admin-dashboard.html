@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header class="topbar"><div class="container"><h1 class="brand">PawHouse - Admin</h1><nav class="nav"><a href="index.html">Home</a><a href="#" id="admin-logout">Logout</a></nav></div></header>
+<main class="container">
+  <h2>Admin Dashboard</h2>
+
+  <section class="admin-section">
+    <h3>Manage Animals</h3>
+    <form id="animal-form">
+      <input id="a-id" type="hidden">
+      <label>Nama<input id="a-name" required></label>
+      <label>Spesies<input id="a-species"></label>
+      <label>Umur<input id="a-age"></label>
+      <label>Deskripsi<textarea id="a-desc"></textarea></label>
+      <button class="btn" type="submit">Simpan</button>
+      <button class="btn ghost" id="a-clear" type="button">Bersihkan</button>
+    </form>
+    <ul id="admin-animals" class="card-list"></ul>
+  </section>
+
+  <section class="admin-section">
+    <h3>Donations</h3>
+    <ul id="admin-donations" class="card-list"></ul>
+  </section>
+
+  <section class="admin-section">
+    <h3>Volunteers</h3>
+    <ul id="admin-vols" class="card-list"></ul>
+  </section>
+
+  <section class="admin-section">
+    <h3>Adoptions</h3>
+    <ul id="admin-adopts" class="card-list"></ul>
+  </section>
+</main>
+
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+    if(!isAdminLogged()) { alert('Akses ditolak. Login sebagai admin.'); window.location.href='login.html'; return; }
+    renderAdminAll();
+    document.getElementById('admin-logout').addEventListener('click', ()=>{ logout(); window.location.href='index.html'; });
+    document.getElementById('animal-form').addEventListener('submit', function(e){ e.preventDefault(); saveAnimalFromForm(); });
+    document.getElementById('a-clear').addEventListener('click', clearAnimalForm);
+  });
+</script>
+</body></html>

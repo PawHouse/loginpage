@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adopsi - PawHouse</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="brand">PawHouse</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="donate.html">Donasi</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a id="nav-login2" href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Daftar Hewan</h2>
+    <ul id="animals-full" class="card-list"></ul>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      renderAnimalsFull();
+      updateNav();
+    });
+  </script>
+</body>
+</html>

@@ -1,22 +1,52 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-    <title>Login Admin - PawHouse</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - PawHouse</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="brand">PawHouse</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+      </nav>
+    </div>
+  </header>
 
-<h2>Login Admin</h2>
+  <main class="container auth">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label>Username atau Email
+        <input id="login-username" required placeholder="username atau email">
+      </label>
+      <label>Password
+        <input id="login-password" type="password" required placeholder="password">
+      </label>
+      <button class="btn" type="submit">Login</button>
+      <p class="muted">Belum punya akun? <a href="register.html">Daftar</a></p>
+      <p id="login-msg" class="msg"></p>
+    </form>
+  </main>
 
-<form class="login-box">
-    <label>Username</label>
-    <input type="text" placeholder="Masukkan username">
-
-    <label>Password</label>
-    <input type="password" placeholder="Masukkan password">
-
-    <button type="submit">Login</button>
-</form>
-
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const u = document.getElementById('login-username').value.trim();
+      const p = document.getElementById('login-password').value;
+      const ok = loginUser(u,p);
+      const msg = document.getElementById('login-msg');
+      if(ok.success){
+        msg.textContent = 'Login berhasil';
+        setTimeout(()=>{ window.location.href = ok.isAdmin ? 'admin-dashboard.html' : 'index.html'; }, 400);
+      } else {
+        msg.textContent = ok.message;
+      }
+    });
+  </script>
 </body>
 </html>

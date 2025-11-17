@@ -1,26 +1,56 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-    <title>PawHouse - Animal Shelter</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PawHouse - Home</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<header>
-    <h1>PawHouse Animal Shelter</h1>
-    <nav>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="brand">PawHouse</h1>
+      <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="adopsi.html">Adopsi</a>
-        <a href="donasi.html">Donasi</a>
+        <a href="adopt.html">Adopsi</a>
+        <a href="donate.html">Donasi</a>
         <a href="volunteer.html">Volunteer</a>
-        <a href="login.html">Login Admin</a>
-    </nav>
-</header>
+        <a href="about.html">Tentang</a>
+        <a href="contact.html">Kontak</a>
+        <a href="faq.html">FAQ</a>
+        <a id="nav-login" href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-    <h2>Selamat Datang di PawHouse</h2>
-    <p>Platform adopsi hewan, donasi, dan kegiatan volunteer.</p>
-</section>
+  <main class="container">
+    <section class="hero">
+      <h2>Selamat datang di PawHouse</h2>
+      <p>Platform adopsi hewan, donasi, dan kegiatan volunteer.</p>
+      <div class="cta">
+        <a class="btn" href="adopt.html">Lihat Hewan</a>
+        <a class="btn ghost" href="donate.html">Donasi</a>
+      </div>
+    </section>
 
+    <section>
+      <h3>Hewan Tersedia (Preview)</h3>
+      <ul id="animals-list" class="card-list"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>&copy; PawHouse - Animal Shelter</small>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAnimalsPreview();
+      updateNav();
+    });
+  </script>
 </body>
 </html>

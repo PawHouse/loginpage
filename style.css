@@ -1,42 +1,27 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #fafafa;
-}
+/* Simple styling adapted to Figma-like clean look */
+:root{ --primary:#ff914d; --muted:#666; --bg:#f8f9fa; --card:#fff; }
 
-header {
-    background: #ff914d;
-    padding: 15px;
-    text-align: center;
-    color: white;
-}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
+.container{max-width:980px;margin:0 auto;padding:18px}
+.topbar{background:var(--primary);color:#fff}
+.topbar .container{display:flex;align-items:center;justify-content:space-between}
+.brand{margin:0;font-size:20px}
+.nav a{color:#fff;text-decoration:none;margin-left:12px;font-weight:600}
+.hero{padding:40px;background:linear-gradient(180deg, rgba(255,255,255,0.1), transparent);text-align:center;border-radius:8px}
+.cta{margin-top:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:6px;background:var(--primary);color:#fff;text-decoration:none;border:none;cursor:pointer}
+.btn.ghost{background:transparent;border:2px solid var(--primary);color:var(--primary);margin-left:8px}
+.card-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0}
+.card{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.auth{max-width:420px;margin:40px auto;background:var(--card);padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.auth label{display:block;margin-bottom:8px;color:var(--muted)}
+.auth input, textarea{width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #e7e7e7}
+.msg{color:crimson;margin-top:8px}
+.muted{color:var(--muted);font-size:14px}
+.footer{padding:20px;text-align:center;color:var(--muted)}
 
-nav a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-}
-
-.hero {
-    text-align: center;
-    padding: 40px;
-}
-
-.login-box {
-    width: 300px;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.login-box input {
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px;
-    background: #ff914d;
-    color: white;
-    border: none;
-}
+/* admin */
+.admin-section{background:var(--card);padding:12px;border-radius:8px;margin-top:12px}
+.admin-section form label{display:block;margin-bottom:6px}
+.admin-section input, textarea{width:100%;padding:8px;margin-bottom:8px;border:1px solid #ddd;border-radius:6px}
